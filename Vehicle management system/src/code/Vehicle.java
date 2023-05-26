@@ -1,8 +1,11 @@
 package code;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 
-public class Vehicle {
+import vehicle_exception.VehicleHandlingException;
+
+public class Vehicle implements Comparable<Vehicle> {
 	/*
 	 * chasisNo(string) : Unique ID, color(enum) , netPrice(double) ,
 	 * manufactureDate(LocalDate),company,isAvailable
@@ -23,6 +26,8 @@ public class Vehicle {
 		this.company = company;
 		this.isAvailable = true;
 	}
+	
+	
 	@Override
 	public String toString() {
 		return "Vehicle [chasisNo=" + chasisNo + ", vehicleColor=" + vehicleColor + ", netPrice=" + netPrice
@@ -80,6 +85,25 @@ public class Vehicle {
 	{
 		this.chasisNo=newChasisNo;
 	}
+
+
+
+
+	@Override
+	public int compareTo(Vehicle newVehicle) {
+	  int i = this.chasisNo.compareTo(newVehicle.chasisNo);
+	  System.out.println("in compareTo method of i="+i);
+		return i;
+	}
+
+	
+
+
+
+
+
+	
+	
 	
 	
 	
